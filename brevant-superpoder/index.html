@@ -42,7 +42,7 @@ h2 em{font-style:normal;color:var(--o)}
 .hero-bg{position:absolute;inset:-10% 0 0;background:url(img/bg_campo.jpg) center 65%/cover;opacity:.35;will-change:transform}
 .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--mx) 10%,rgba(31,6,12,.4) 60%,var(--mx)),linear-gradient(transparent 60%,var(--mx))}
 .hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center;min-height:min(92vh,880px);padding-top:40px;padding-bottom:40px}
-.logo{height:34px;width:auto;margin-bottom:44px}
+.logos{display:flex;align-items:center;gap:28px;margin-bottom:44px}.logo{height:34px;width:auto}.stapl{height:30px;padding-left:28px;border-left:1px solid rgba(255,255,255,.3)}
 .hp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .hp img{border-radius:16px;box-shadow:0 40px 80px rgba(0,0,0,.55)}
 .hp img:last-child{transform:translateY(40px)}
@@ -140,7 +140,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
   <div class="hero-bg" id="hbg"></div>
   <div class="wrap">
     <div>
-      <img class="logo" src="img/logo_brevant_branco.svg" alt="Brevant sementes">
+      <div class="logos"><img class="logo" src="img/logo_brevant_branco.svg" alt="Brevant sementes"><img class="logo stapl" src="img/stap_feelings_branco.png" alt="Stap feelings"></div>
       <div class="k">Feiras Agro 2027 · Ativação #03</div>
       <h1>Superpoder<span>no Campo</span></h1>
       <p class="lead" style="margin-top:26px">O produtor tira uma foto no estande e a IA transforma o retrato em um pôster de herói do agro, com a energia e a assinatura Brevant.</p>
