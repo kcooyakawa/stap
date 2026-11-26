@@ -6,165 +6,215 @@
 <title>Superpoder no Campo · Brevant</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
 <style>
-/* VOICE: campanha de marca, confiante e quente
-   IDEA: o painel de LED do estande — luz laranja correndo sobre marsala
-   PICTURE: pôsteres reais, antes→depois que se transformam sozinhos
-   COLOUR/TYPE: marsala #7B2034 dominante, laranja #F26A21 energia, branco; Montserrat 900
-   LAYOUT: bandas cheias, hero com pôster inclinado, infográfico em trilha */
-:root{--m:#7B2034;--md:#3d0d18;--mx:#2a0810;--o:#F26A21;--g:#FFB547;--w:#fff}
+/* VOICE: lançamento de campanha, cinematográfico
+   IDEA: um trailer de herói — luz laranja que transforma a foto em pôster
+   PICTURE: cena-palco fixa no scroll: quiz → chroma → varredura de luz → pôster
+   COLOUR/TYPE: marsala profundo, laranja Brevant como luz; Montserrat 900 itálico
+   LAYOUT: hero parallax, palco sticky, galeria antes/depois com wipe animado */
+:root{--m:#7B2034;--md:#3d0d18;--mx:#1f060c;--o:#F26A21;--g:#FFB547}
 *{box-sizing:border-box;min-width:0}
 html{scroll-behavior:smooth}
-body{margin:0;font:17px/1.6 Montserrat,Helvetica,Arial,sans-serif;color:var(--w);background:var(--mx);overflow-x:clip}
+body{margin:0;font:17px/1.6 Montserrat,Helvetica,Arial,sans-serif;color:#fff;background:var(--mx);overflow-x:clip}
 img{display:block;width:100%;height:auto}
 .wrap{max-width:1240px;margin:auto;padding:0 max(5vw,18px)}
-.band{padding:clamp(64px,9vw,140px) 0;position:relative}
 .k{font-weight:800;color:var(--o);font-size:14px;letter-spacing:.04em;margin-bottom:18px;display:flex;align-items:center;gap:12px}
 .k::before{content:"";width:34px;height:3px;background:var(--o)}
-h1{font-size:clamp(52px,9vw,128px);line-height:.92;margin:0;font-weight:900;letter-spacing:-.03em}
-h1 em{font-style:italic;color:var(--o)}
-h2{font-size:clamp(36px,5.4vw,68px);line-height:1;margin:0 0 22px;font-weight:900;letter-spacing:-.02em;text-wrap:balance}
-h2 em{font-style:italic;color:var(--o)}
-.lead{font-size:clamp(18px,1.8vw,22px);max-width:620px;opacity:.86}
-/* hero */
-.hero{background:radial-gradient(120% 90% at 85% 40%,#a8303f 0%,var(--m) 38%,var(--md) 75%,var(--mx) 100%);overflow:hidden}
-.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;min-height:min(88vh,900px)}
-.logo{height:34px;width:auto;margin-bottom:56px}
-.stack{position:relative;height:clamp(420px,52vw,640px)}
-.stack img{position:absolute;width:62%;border-radius:18px;box-shadow:0 40px 80px rgba(0,0,0,.45)}
-.stack img:nth-child(1){left:0;top:12%;transform:rotate(-7deg)}
-.stack img:nth-child(2){right:0;top:0;transform:rotate(5deg);z-index:2}
-.rays{position:absolute;inset:0;pointer-events:none;opacity:.55}
-.cta{display:inline-flex;gap:10px;align-items:center;margin-top:34px;padding:16px 26px;border-radius:999px;background:var(--o);color:#fff;font-weight:800;text-decoration:none}
-/* infográfico */
-.flow{background:var(--mx)}
-.track{position:relative;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:56px}
-.line{position:absolute;left:6%;right:6%;top:58px;height:3px;background:rgba(255,255,255,.12);overflow:hidden;border-radius:3px}
-.line i{position:absolute;inset:0;background:linear-gradient(90deg,transparent,var(--o),var(--g),transparent);width:40%;animation:run 3.2s linear infinite}
-@keyframes run{from{transform:translateX(-100%)}to{transform:translateX(260%)}}
-.st{position:relative;text-align:center;opacity:.35;transition:opacity .5s,transform .5s}
-.st.on{opacity:1;transform:translateY(-6px)}
-.ic{width:116px;height:116px;margin:0 auto 22px;border-radius:50%;background:var(--m);display:grid;place-items:center;border:3px solid rgba(255,255,255,.14);position:relative;z-index:1}
-.st.on .ic{border-color:var(--o);box-shadow:0 0 0 10px rgba(242,106,33,.15),0 0 60px rgba(242,106,33,.5)}
-.ic svg{width:54px;height:54px}
-.st b{font-size:13px;color:var(--o);font-weight:800}
-.st h3{margin:6px 0 8px;font-size:22px;font-weight:900}
-.st p{margin:0 auto;max-width:240px;font-size:15px;opacity:.78}
-/* antes depois */
-.ba{background:linear-gradient(180deg,var(--md),var(--m))}
-.profiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px);margin-top:56px}
-.pf{display:grid;grid-template-columns:minmax(0,.62fr) minmax(0,1fr);gap:14px;align-items:end}
-.ph{position:relative;border-radius:16px;overflow:hidden}
-.ph span{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.55);font-size:12px;font-weight:800;padding:6px 10px;border-radius:999px}
-.ph.out span{background:var(--o)}
-.ph.out{box-shadow:0 30px 60px rgba(0,0,0,.35)}
-.pf h3{grid-column:1/-1;margin:14px 0 0;font-size:28px;font-weight:900}
-.pf h3 small{display:block;font-size:15px;font-weight:500;opacity:.8;margin-top:4px}
-.arrow{position:absolute;right:-26px;top:50%;width:38px;height:38px;border-radius:50%;background:var(--o);display:grid;place-items:center;font-weight:900;z-index:2;transform:translateY(-50%)}
-/* grupos */
-.groups{background:var(--mx)}
-.g2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px;margin-top:48px}
-.g2 .pf{grid-template-columns:minmax(0,1fr) minmax(0,.8fr)}
-/* marca */
-.brand{background:var(--o);color:#fff}
-.brand .k{color:var(--mx)}.brand .k::before{background:var(--mx)}
-.brand h2 em{color:var(--mx)}
-.pill{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:44px}
-.pill div{background:rgba(61,13,24,.18);border-radius:18px;padding:26px}
-.pill h3{margin:0 0 8px;font-size:20px;font-weight:900}
-.pill p{margin:0;font-size:15px}
-.sw{display:flex;gap:10px;margin-top:14px}.sw i{width:34px;height:34px;border-radius:50%;border:2px solid #fff}
-/* entrega */
+h1{font-size:clamp(56px,10vw,140px);line-height:.88;margin:0;font-weight:900;font-style:italic;letter-spacing:-.03em}
+h1 span{display:block;color:var(--o)}
+h2{font-size:clamp(36px,5.4vw,72px);line-height:.98;margin:0 0 22px;font-weight:900;font-style:italic;letter-spacing:-.02em;text-wrap:balance}
+h2 em{color:var(--o)}
+.lead{font-size:clamp(18px,1.8vw,22px);max-width:600px;opacity:.86}
+/* HERO parallax */
+.hero{position:relative;height:100vh;min-height:640px;overflow:hidden}
+.layer{position:absolute;inset:-8%;will-change:transform}
+.l-bg{background:url(img/bg_campo.jpg) center 70%/cover;filter:saturate(1.1) brightness(.55)}
+.l-shade{background:radial-gradient(80% 70% at 70% 50%,transparent,var(--mx) 85%),linear-gradient(90deg,var(--mx) 0,rgba(31,6,12,.6) 45%,transparent 75%)}
+.l-glow{background:radial-gradient(40% 40% at 72% 45%,rgba(242,106,33,.55),transparent 70%);mix-blend-mode:screen;animation:pulse 4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.55}}
+.l-sparks{inset:0}
+.l-sparks i{position:absolute;width:4px;height:4px;border-radius:50%;background:var(--g);box-shadow:0 0 12px var(--o);animation:rise linear infinite}
+@keyframes rise{from{transform:translateY(0);opacity:0}15%{opacity:1}to{transform:translateY(-110vh);opacity:0}}
+.hero .wrap{position:relative;height:100%;display:grid;grid-template-columns:1fr .8fr;align-items:center;gap:30px}
+.h-posters{position:relative;height:72vh;will-change:transform}
+.h-posters img{position:absolute;height:100%;width:auto;border-radius:18px;box-shadow:0 50px 90px rgba(0,0,0,.6)}
+.h-posters img:nth-child(1){right:34%;top:6%;height:84%;transform:rotate(-8deg);opacity:.9}
+.h-posters img:nth-child(2){right:0;top:0;transform:rotate(4deg)}
+.logo{height:34px;width:auto;margin-bottom:48px}
+.scroll{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);font-size:12px;font-weight:700;opacity:.7;text-align:center}
+.scroll::after{content:"";display:block;width:2px;height:40px;margin:8px auto 0;background:linear-gradient(var(--o),transparent);animation:drop 1.6s infinite}
+@keyframes drop{from{transform:scaleY(0);transform-origin:top}to{transform:scaleY(1)}}
+/* PALCO sticky */
+.stage{height:420vh;position:relative;background:var(--mx)}
+.pin{position:sticky;top:0;height:100vh;display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:5vw;padding:0 max(5vw,18px);max-width:1340px;margin:auto}
+.steps li{list-style:none;padding:18px 0 18px 22px;border-left:3px solid rgba(255,255,255,.12);opacity:.35;transition:.5s}
+.steps li.on{opacity:1;border-color:var(--o)}
+.steps b{font-size:13px;color:var(--o)}
+.steps h3{margin:2px 0 4px;font-size:clamp(20px,2.2vw,28px);font-weight:900;font-style:italic}
+.steps p{margin:0;font-size:15px;opacity:.8}
+.steps{padding:0;margin:20px 0 0}
+.bar{height:4px;background:rgba(255,255,255,.12);border-radius:4px;margin-top:22px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--o),var(--g))}
+.screen{position:relative;aspect-ratio:3/4;max-height:82vh;margin:auto;width:100%;max-width:560px;border-radius:24px;overflow:hidden;background:#000;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 60px 120px rgba(0,0,0,.6),0 0 140px rgba(242,106,33,.25)}
+.sc{position:absolute;inset:0;opacity:0;transition:opacity .6s}
+.sc.on{opacity:1}
+.quiz{background:linear-gradient(160deg,var(--m),var(--md));display:flex;flex-direction:column;justify-content:center;padding:10%}
+.quiz small{color:var(--o);font-weight:800}
+.quiz h4{font-size:clamp(24px,3vw,38px);font-style:italic;font-weight:900;line-height:1.05;margin:10px 0 24px}
+.opt{border:2px solid rgba(255,255,255,.25);border-radius:14px;padding:14px 18px;margin-bottom:12px;font-weight:700;transition:.4s}
+.opt.pick{background:var(--o);border-color:var(--o)}
+.chroma{background:#19b34a}
+.chroma img{height:100%;object-fit:cover;object-position:center 30%}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.flash.go{animation:flash .5s}
+@keyframes flash{10%{opacity:.9}to{opacity:0}}
+.gen img{height:100%;object-fit:cover}
+.gen .before{position:absolute;inset:0}
+.gen .after{position:absolute;inset:0;clip-path:inset(0 0 calc(100% - var(--p,0%)) 0)}
+.gen .beam{position:absolute;left:0;right:0;height:8px;top:var(--p,0%);background:var(--g);box-shadow:0 0 30px 12px var(--o),0 0 80px 30px rgba(242,106,33,.6)}
+.gen .tag,.print .tag{position:absolute;left:16px;top:16px;background:var(--o);font-size:12px;font-weight:800;padding:6px 12px;border-radius:999px;z-index:2}
+.print{background:var(--md);display:grid;place-items:center}
+.print img{width:72%;border-radius:10px;box-shadow:0 30px 60px rgba(0,0,0,.5);transform:translateY(var(--y,40%));transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.qr{position:absolute;right:8%;bottom:7%;background:#fff;color:var(--mx);border-radius:14px;padding:12px 14px;font-size:12px;font-weight:800;display:flex;gap:10px;align-items:center}
+.qr i{width:44px;height:44px;background:repeating-conic-gradient(var(--mx) 0 25%,#fff 0 50%) 0 0/11px 11px}
+/* galeria */
+.band{padding:clamp(80px,10vw,150px) 0}
+.gal{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;margin-top:56px}
+.card{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:#111;cursor:pointer}
+.card img{position:absolute;inset:0;height:100%;object-fit:cover}
+.card .a{clip-path:inset(0 0 0 var(--w,100%));transition:clip-path 1.1s cubic-bezier(.7,0,.2,1)}
+.card.on .a{--w:0%}
+.card .line{position:absolute;top:0;bottom:0;width:4px;left:var(--w,100%);background:var(--g);box-shadow:0 0 24px var(--o);transition:left 1.1s cubic-bezier(.7,0,.2,1)}
+.card.on .line{--w:0%;opacity:0}
+.card figcaption{position:absolute;left:0;right:0;bottom:0;padding:50px 18px 16px;background:linear-gradient(transparent,rgba(31,6,12,.9));font-weight:900;font-style:italic;font-size:22px}
+.card figcaption small{display:block;font-style:normal;font-weight:600;font-size:13px;color:var(--o)}
+.card .lab{position:absolute;top:14px;left:14px;z-index:3;font-size:11px;font-weight:800;padding:5px 10px;border-radius:999px;background:rgba(0,0,0,.55)}
+.card.on .lab{background:var(--o)}
+.hint{margin-top:18px;font-size:14px;opacity:.7}
+/* DNA */
+.dna{background:var(--o)}
+.dna .k{color:var(--mx)}.dna .k::before{background:var(--mx)}
+.dna h2 em{color:var(--mx)}
+.dg{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.pts{display:grid;gap:22px;margin-top:30px}
+.pts div{border-top:2px solid rgba(31,6,12,.35);padding-top:14px}
+.pts h3{margin:0 0 4px;font-size:20px;font-weight:900}
+.pts p{margin:0}
+.zoom{border-radius:20px;overflow:hidden;box-shadow:0 40px 80px rgba(61,13,24,.45)}
 .take{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:44px}
 .take div{border-top:3px solid var(--o);padding-top:18px}
-.take h3{margin:0 0 8px;font-size:22px;font-weight:900}
+.take h3{margin:0 0 8px;font-size:22px;font-weight:900;font-style:italic}
 .take p{margin:0;opacity:.8}
-footer{background:var(--mx);border-top:1px solid rgba(255,255,255,.1);padding:34px 0;font-size:14px;opacity:.75}
+footer{padding:34px 0;font-size:14px;opacity:.7;border-top:1px solid rgba(255,255,255,.1)}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.rv{opacity:0;transform:translateY(30px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
-@media(max-width:900px){.hero .grid{grid-template-columns:1fr;min-height:0;padding-top:40px}.track{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}.line{display:none}.profiles,.g2{grid-template-columns:1fr}.pill{grid-template-columns:repeat(2,minmax(0,1fr))}.take{grid-template-columns:1fr}}
-@media(max-width:520px){.track,.pill{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.line i{animation:none}.rv{opacity:1;transform:none}}
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1s,transform 1s}.rv.in{opacity:1;transform:none}
+@media(max-width:900px){.hero .wrap{grid-template-columns:1fr;align-content:center}.h-posters{height:42vh}.pin{grid-template-columns:1fr;align-content:center;gap:20px}.steps li{padding:8px 0 8px 16px}.steps p{display:none}.screen{max-height:52vh;width:auto}.gal{grid-template-columns:repeat(2,minmax(0,1fr))}.dg,.take{grid-template-columns:1fr}}
+@media(max-width:520px){.gal{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
 
-<section class="hero"><div class="wrap grid">
-  <div>
-    <img class="logo" src="img/logo_brevant_branco.svg" alt="Brevant sementes">
-    <div class="k">Feiras Agro 2027 · Ativação #03</div>
-    <h1>Superpoder<br>no <em>Campo</em></h1>
-    <p class="lead" style="margin-top:28px">Uma foto no estande. Um pôster de herói do agro. O produtor descobre o seu superpoder e leva para casa com a assinatura Brevant.</p>
-    <a class="cta" href="#mecanica">Ver a mecânica ↓</a>
+<section class="hero" id="hero">
+  <div class="layer l-bg" data-d="0.25"></div>
+  <div class="layer l-glow" data-d="0.15"></div>
+  <div class="layer l-shade"></div>
+  <div class="layer l-sparks" id="sparks"></div>
+  <div class="wrap">
+    <div>
+      <img class="logo" src="img/logo_brevant_branco.svg" alt="Brevant sementes">
+      <div class="k">Feiras Agro 2027 · Ativação #03</div>
+      <h1>Superpoder<span>no Campo</span></h1>
+      <p class="lead" style="margin-top:26px">Uma foto no estande vira um pôster de herói do agro, com a energia e a assinatura Brevant.</p>
+    </div>
+    <div class="h-posters" data-d="-0.12">
+      <img src="img/poster2_parceira.jpg" alt="Ana Parceira">
+      <img src="img/poster2_visionario.jpg" alt="João Visionário">
+    </div>
   </div>
-  <div class="stack">
-    <svg class="rays" viewBox="0 0 600 600" preserveAspectRatio="none"><g stroke="#F26A21" stroke-width="2" opacity=".5">
-      <line x1="300" y1="300" x2="0" y2="0"/><line x1="300" y1="300" x2="600" y2="40"/><line x1="300" y1="300" x2="600" y2="560"/><line x1="300" y1="300" x2="40" y2="600"/></g></svg>
-    <img src="img/poster2_parceira.jpg" alt="Pôster Parceira">
-    <img src="img/poster2_visionario.jpg" alt="Pôster Visionário">
-  </div>
-</div></section>
+  <div class="scroll">Role para ver a mecânica</div>
+</section>
 
-<section class="band flow" id="mecanica"><div class="wrap">
-  <div class="k">A mecânica</div>
-  <h2>Da foto ao pôster em <em>quatro</em> passos</h2>
-  <div class="track" id="track">
-    <div class="line"><i></i></div>
-    <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4M8 9h8M8 12h5"/></svg></div><b>Passo 1</b><h3>Quiz no totem</h3><p>3 ou 4 perguntas sobre o jeito de trabalhar no campo revelam o superpoder.</p></div>
-    <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></div><b>Passo 2</b><h3>Foto no chroma</h3><p>Sozinho, em casal ou com a família, no fundo verde do estande.</p></div>
-    <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 2l2.2 6.2L20 10l-5.8 1.8L12 18l-2.2-6.2L4 10l5.8-1.8z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></div><b>Passo 3</b><h3>A IA cria a cena</h3><p>A foto é o ponto de partida: pose, lavoura e energia são recompostas pelo tema.</p></div>
-    <div class="st"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 7h6M9 11h6M12 15v3M10 17l2 2 2-2"/></svg></div><b>Passo 4</b><h3>Imprime e compartilha</h3><p>Pôster impresso na hora e versão digital por QR Code ou WhatsApp.</p></div>
+<section class="stage" id="stage">
+  <div class="pin">
+    <div>
+      <div class="k">A mecânica</div>
+      <h2>Da foto ao <em>pôster</em></h2>
+      <ul class="steps">
+        <li><b>01</b><h3>Quiz no totem</h3><p>3 ou 4 perguntas revelam o superpoder do produtor.</p></li>
+        <li><b>02</b><h3>Foto no chroma</h3><p>Sozinho, em casal ou em família, no fundo verde do estande.</p></li>
+        <li><b>03</b><h3>A IA cria a cena</h3><p>A foto é o ponto de partida: pose, lavoura e energia mudam com o tema.</p></li>
+        <li><b>04</b><h3>Imprime e compartilha</h3><p>Pôster na hora e versão digital por QR Code ou WhatsApp.</p></li>
+      </ul>
+      <div class="bar"><i id="bar"></i></div>
+    </div>
+    <div class="screen" id="screen">
+      <div class="sc quiz"><small>Pergunta 2 de 4</small><h4>No campo, o que mais move você?</h4>
+        <div class="opt">Planejar cada detalhe da safra</div><div class="opt" id="pick">Enxergar o que ainda vai nascer</div><div class="opt">Trabalhar junto com a equipe</div><div class="opt">Abrir novas áreas</div></div>
+      <div class="sc chroma"><img src="img/chroma_visionario.jpg" alt=""><div class="flash" id="flash"></div></div>
+      <div class="sc gen" id="gen"><span class="tag">IA criando: Visionário</span><img class="before" src="img/chroma_visionario.jpg" alt=""><img class="after" src="img/poster2_visionario.jpg" alt=""><div class="beam"></div></div>
+      <div class="sc print" id="print"><span class="tag">Pôster pronto</span><img src="img/poster2_visionario.jpg" alt=""><div class="qr"><i></i>Baixe e<br>compartilhe</div></div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="band ba"><div class="wrap">
+<section class="band" style="background:linear-gradient(180deg,var(--mx),var(--md))"><div class="wrap">
   <div class="k">Antes → depois</div>
-  <h2>Qual é o seu <em>superpoder?</em></h2>
-  <p class="lead">Quatro temas, uma mesma lógica visual: energia laranja Brevant, uniforme marsala e a marca dentro da cena.</p>
-  <div class="profiles">
-    <div class="pf rv"><div class="ph"><img src="img/chroma_visionario.jpg" alt=""><span>Antes</span><div class="arrow">→</div></div><div class="ph out"><img src="img/poster2_visionario.jpg" alt=""><span>Pôster</span></div><h3>Visionário<small>Enxerga a safra antes de plantar.</small></h3></div>
-    <div class="pf rv"><div class="ph"><img src="img/chroma_parceira.jpg" alt=""><span>Antes</span><div class="arrow">→</div></div><div class="ph out"><img src="img/poster2_parceira.jpg" alt=""><span>Pôster</span></div><h3>Parceiro<small>Ninguém colhe sozinho.</small></h3></div>
-    <div class="pf rv"><div class="ph"><img src="img/chroma_desbravador.jpg" alt=""><span>Antes</span><div class="arrow">→</div></div><div class="ph out"><img src="img/poster2_desbravador.jpg" alt=""><span>Pôster</span></div><h3>Desbravador<small>Abre caminho onde ninguém foi.</small></h3></div>
-    <div class="pf rv"><div class="ph"><img src="img/chroma_estrategista.jpg" alt=""><span>Antes</span><div class="arrow">→</div></div><div class="ph out"><img src="img/poster2_estrategista.jpg" alt=""><span>Pôster</span></div><h3>Estrategista<small>Cada linha no seu lugar.</small></h3></div>
-  </div>
+  <h2>Uma foto. <em>Seis heróis.</em></h2>
+  <p class="lead">A IA recompõe a cena inteira conforme o tema. Passe o mouse ou toque para revelar o pôster.</p>
+  <div class="gal" id="gal"></div>
+  <p class="hint">Imagens de simulação geradas por IA.</p>
 </div></section>
 
-<section class="band groups"><div class="wrap">
-  <div class="k">Em grupo</div>
-  <h2>Casal e família viram <em>heróis juntos</em></h2>
-  <div class="g2">
-    <div class="pf rv"><div class="ph"><img src="img/chroma_casal.jpg" alt=""><span>Antes</span><div class="arrow">→</div></div><div class="ph out"><img src="img/poster2_casal.jpg" alt=""><span>Pôster</span></div><h3>Casal<small>Parceiros na lavoura e no pôster.</small></h3></div>
-    <div class="pf rv"><div class="ph"><img src="img/chroma_familia.jpg" alt=""><span>Antes</span><div class="arrow">→</div></div><div class="ph out"><img src="img/poster2_familia.jpg" alt=""><span>Pôster</span></div><h3>Família<small>Três gerações de visionários.</small></h3></div>
+<section class="band dna"><div class="wrap dg">
+  <div>
+    <div class="k">DNA Brevant</div>
+    <h2>O poder é do produtor. A identidade é <em>Brevant.</em></h2>
+    <div class="pts">
+      <div><h3>Energia laranja</h3><p>Raios, raízes e hologramas sempre no laranja e dourado da marca.</p></div>
+      <div><h3>Uniforme com logo</h3><p>Camisas, coletes e bonés marsala com o logo Brevant bordado.</p></div>
+      <div><h3>Título de herói</h3><p>Nome e superpoder em letras 3D, laranja com volume marsala.</p></div>
+      <div><h3>Assinatura no pôster</h3><p>Logo Brevant e selo Superpoder no Campo integrados à cena.</p></div>
+    </div>
   </div>
-</div></section>
-
-<section class="band brand"><div class="wrap">
-  <div class="k">DNA Brevant no pôster</div>
-  <h2>O superpoder é do produtor.<br>A identidade é <em>Brevant.</em></h2>
-  <div class="pill">
-    <div><h3>Energia laranja</h3><p>Raios e partículas sempre no laranja e dourado da marca.</p><div class="sw"><i style="background:#F26A21"></i><i style="background:#FFB547"></i></div></div>
-    <div><h3>Uniforme marsala</h3><p>O produtor veste a marca: camisa, colete ou boné marsala com o logo Brevant.</p><div class="sw"><i style="background:#7B2034"></i></div></div>
-    <div><h3>Tipografia da campanha</h3><p>Nome e superpoder em Montserrat Black, no mesmo tom de voz do estande.</p></div>
-    <div><h3>Logo na cena</h3><p>A marca faz parte da composição, não só de uma tarja no rodapé.</p></div>
-  </div>
+  <div class="zoom rv"><img src="img/poster2_familia.jpg" alt="Família Souza Visionários"></div>
 </div></section>
 
 <section class="band" style="background:var(--md)"><div class="wrap">
   <div class="k">O que fica</div>
   <h2>Uma lembrança que <em>circula</em></h2>
   <div class="take">
-    <div><h3>Pôster impresso</h3><p>Entregue na hora, com nome, superpoder e a marca Brevant.</p></div>
-    <div><h3>Versão digital</h3><p>Por QR Code ou WhatsApp, no formato para Stories.</p></div>
-    <div><h3>Mídia espontânea</h3><p>Cada pôster postado leva Brevant para as redes do produtor e da família.</p></div>
+    <div class="rv"><h3>Pôster impresso</h3><p>Entregue na hora, com nome, superpoder e a marca Brevant.</p></div>
+    <div class="rv"><h3>Versão digital</h3><p>Por QR Code ou WhatsApp, no formato para Stories.</p></div>
+    <div class="rv"><h3>Mídia espontânea</h3><p>Cada pôster postado leva Brevant às redes do produtor e da família.</p></div>
   </div>
 </div></section>
 
-<footer><div class="wrap"><span>Brevant · Superpoder no Campo · Feiras Agro 2027</span><span>Imagens de simulação geradas por IA · Stap</span></div></footer>
+<footer><div class="wrap"><span>Brevant · Superpoder no Campo · Feiras Agro 2027</span><span>Stap</span></div></footer>
 
 <script>{
-const st=[...document.querySelectorAll('.st')];let k=0;
-const tick=()=>{st.forEach((s,i)=>s.classList.toggle('on',i===k));k=(k+1)%st.length};
-tick();setInterval(tick,1600);
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+const sp=document.getElementById('sparks');
+for(let i=0;i<34;i++){const e=document.createElement('i');e.style.left=(40+Math.random()*60)+'%';e.style.top=(60+Math.random()*50)+'%';e.style.animationDuration=(5+Math.random()*7)+'s';e.style.animationDelay=(-Math.random()*10)+'s';sp.appendChild(e)}
+const par=[...document.querySelectorAll('[data-d]')];
+let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+const stage=document.getElementById('stage'),scs=[...document.querySelectorAll('.sc')],lis=[...document.querySelectorAll('.steps li')],bar=document.getElementById('bar'),gen=document.getElementById('gen'),pr=document.getElementById('print'),pick=document.getElementById('pick'),fl=document.getElementById('flash');
+let last=-1;
+const loop=()=>{
+  const y=scrollY;
+  par.forEach(el=>{const d=+el.dataset.d;el.style.transform=`translate3d(${mx*d*-60}px,${y*d+my*d*-40}px,0)`});
+  const r=stage.getBoundingClientRect(),tot=stage.offsetHeight-innerHeight,p=Math.min(1,Math.max(0,-r.top/tot));
+  const s=Math.min(3,Math.floor(p*4));bar.style.width=(p*100)+'%';
+  if(s!==last){scs.forEach((x,i)=>x.classList.toggle('on',i===s));lis.forEach((x,i)=>x.classList.toggle('on',i===s));if(s===1){fl.classList.remove('go');void fl.offsetWidth;fl.classList.add('go')}last=s}
+  pick.classList.toggle('pick',p>0.12);
+  const g=Math.min(1,Math.max(0,(p-0.5)/0.22));gen.style.setProperty('--p',(g*100)+'%');
+  pr.style.setProperty('--y',p>0.78?'0%':'40%');
+  requestAnimationFrame(loop)};
+loop();
+const D=[['visionario','João','Visionário'],['parceira','Ana','Parceira'],['desbravador','Pedro','Desbravador'],['estrategista','Cláudia','Estrategista'],['casal','Carlos & Maria','Parceiros'],['familia','Família Souza','Visionários']];
+const gal=document.getElementById('gal');
+gal.innerHTML=D.map(([k,n,t])=>`<figure class="card rv" style="margin:0"><img src="img/chroma_${k}.jpg" alt=""><img class="a" src="img/poster2_${k}.jpg" alt=""><div class="line"></div><span class="lab">Antes → Pôster</span><figcaption><small>${n}</small>${t}</figcaption></figure>`).join('');
+const cards=[...gal.children];
+cards.forEach(c=>{c.addEventListener('pointerenter',()=>c.classList.add('on'));c.addEventListener('click',()=>c.classList.toggle('on'))});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);if(e.target.classList.contains('card'))setTimeout(()=>e.target.classList.add('on'),700+cards.indexOf(e.target)*220)}}),{threshold:.25});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 }</script>
 </body>
