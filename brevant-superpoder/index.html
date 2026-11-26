@@ -84,7 +84,8 @@ h2 em{font-style:normal;color:var(--o)}
 .print.on .phone{transform:none;opacity:1}
 .phone img{border-radius:14px}
 .phone p{margin:8px 0 2px;font-size:12px;font-weight:700;text-align:center}
-.pinwrap{height:560vh;position:relative}
+.rev{background:var(--o);display:flex;flex-direction:column;justify-content:center;align-items:flex-start;padding:0 10%;color:var(--mx)}.rev small{font-weight:800;font-size:16px}.rev h4{font-size:clamp(40px,6vw,84px);font-weight:900;color:#fff;margin:4px 0 22px;line-height:1}.thm{display:grid;grid-template-columns:repeat(4,auto);gap:18px;font-weight:800}.thm span{border-top:2px solid rgba(255,255,255,.6);padding-top:8px;color:#fff;opacity:.7}.thm span.on{border-color:var(--mx);color:var(--mx);opacity:1}.rev em{font-style:normal;margin-top:22px;font-weight:700}
+.pinwrap{height:700vh;position:relative}
 .pin{position:sticky;top:0;height:100vh;display:flex;align-items:center;overflow:hidden}
 .pin-in{width:100%}
 .pin .player{margin-top:24px}
@@ -93,7 +94,7 @@ h2 em{font-style:normal;color:var(--o)}
 .screen{max-height:66vh;margin-left:auto}
 .gen .after{clip-path:inset(0 0 calc(100% - var(--p,0%)) 0)!important;animation:none!important}
 .gen .beam{top:var(--p,0%)!important;opacity:var(--bo,0)!important;animation:none!important}
-@media(max-width:900px){.pin .tab p,.pin .tab .pg{display:none!important}.pin .tabs{grid-template-columns:repeat(4,1fr);gap:6px}.pin .tab{padding:10px}.pin .tab h3{font-size:13px}.pin .tab b{font-size:11px}.pin h2{font-size:30px}.screen{height:52vh;width:100%;max-height:none;aspect-ratio:auto;margin:0}.hintdown{display:none}.pin .player{gap:14px}}
+@media(max-width:900px){.pin .tab p,.pin .tab .pg{display:none!important}.pin .tabs{grid-template-columns:repeat(5,1fr);gap:6px}.pin .tab{padding:10px}.pin .tab h3{font-size:13px}.pin .tab b{font-size:11px}.pin h2{font-size:30px}.screen{height:52vh;width:100%;max-height:none;aspect-ratio:auto;margin:0}.hintdown{display:none}.pin .player{gap:14px}}
 .pairs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,4vw,56px) clamp(24px,3vw,44px);margin-top:52px}
 .pair .row{display:grid;grid-template-columns:minmax(0,1fr) 40px minmax(0,1fr);align-items:center;gap:8px}
 .pair .ph{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4}
@@ -145,18 +146,20 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <section class="pinwrap" id="mecanica"><div class="pin"><div class="wrap pin-in">
   <div class="pin-head">
     <div class="k">A mecânica</div>
-    <h2>Da foto ao <em>pôster</em> em quatro passos</h2>
+    <h2>Da foto ao <em>pôster</em> em cinco passos</h2>
   </div>
   <div class="player">
     <div class="tabs">
       <div class="tab"><b>Passo 1</b><h3>Quiz no totem</h3><p>3 ou 4 perguntas sobre o jeito de trabalhar no campo revelam o superpoder.</p><div class="pg"><i></i></div></div>
-      <div class="tab"><b>Passo 2</b><h3>Foto no chroma</h3><p>O produtor posa no fundo verde do estande: sozinho, em casal ou com a família.</p><div class="pg"><i></i></div></div>
-      <div class="tab"><b>Passo 3</b><h3>A IA cria a cena</h3><p>A foto é o ponto de partida: a IA recompõe pose, lavoura e energia conforme o tema.</p><div class="pg"><i></i></div></div>
-      <div class="tab"><b>Passo 4</b><h3>Imprime e compartilha</h3><p>Pôster impresso na hora e versão digital por QR Code ou WhatsApp.</p><div class="pg"><i></i></div></div>
+      <div class="tab"><b>Passo 2</b><h3>Revelação</h3><p>A tela revela o superpoder. O produtor pode aceitar ou trocar de tema.</p><div class="pg"><i></i></div></div>
+      <div class="tab"><b>Passo 3</b><h3>Foto no chroma</h3><p>O produtor posa no fundo verde do estande: sozinho, em casal ou com a família.</p><div class="pg"><i></i></div></div>
+      <div class="tab"><b>Passo 4</b><h3>A IA cria a cena</h3><p>A foto é o ponto de partida: a IA recompõe pose, lavoura e energia conforme o tema.</p><div class="pg"><i></i></div></div>
+      <div class="tab"><b>Passo 5</b><h3>Imprime e compartilha</h3><p>Pôster impresso na hora e versão digital por QR Code ou WhatsApp.</p><div class="pg"><i></i></div></div>
     </div>
     <div class="screen" id="screen">
       <div class="sc quiz"><small>Pergunta 2 de 4</small><h4>No campo, o que mais move você?</h4>
         <div class="opt">Planejar cada detalhe da safra</div><div class="opt" id="pick">Enxergar o que ainda vai nascer</div><div class="opt">Trabalhar junto com a equipe</div></div>
+      <div class="sc rev"><small>Seu superpoder é</small><h4>VISIONÁRIO</h4><div class="thm"><span class="on">Visionário</span><span>Parceiro</span><span>Desbravador</span><span>Estrategista</span></div><em>Prefere outro tema? Toque para trocar.</em></div>
       <div class="sc"><span class="cap">Foto no fundo chroma</span><div class="solo"><img src="img/chroma_visionario.jpg" alt="João posando no chroma"></div><div class="flash"></div></div>
       <div class="sc gen" id="gen"><span class="cap">IA criando · Visionário</span><div class="stack"><img src="img/chroma_visionario.jpg" alt=""><img class="after" src="img/poster2_visionario.jpg" alt=""><div class="beam"></div></div></div>
       <div class="sc print"><span class="cap">Pôster pronto</span><img src="img/poster2_visionario.jpg" alt="Pôster impresso"><div class="phone"><img src="img/poster2_visionario.jpg" alt=""><p>Enviado por WhatsApp</p></div></div>
@@ -208,11 +211,11 @@ const show=i=>{cur=i;tabs.forEach((b,j)=>b.classList.toggle('on',j===i));scs.for
 const loop=()=>{
   hbg.style.transform=`translateY(${scrollY*.15}px)`;
   const r=pw.getBoundingClientRect(),tot=pw.offsetHeight-innerHeight,p=Math.min(.9999,Math.max(0,-r.top/tot));
-  const f=p*4,i=Math.floor(f),loc=f-i;
+  const f=p*5,i=Math.floor(f),loc=f-i;
   if(i!==cur)show(i);
   tabs[i].querySelector('.pg i').style.width=(loc*100)+'%';
   pick.classList.toggle('pick',i>0||loc>.35);
-  const g=i<2?0:i>2?1:Math.min(1,Math.max(0,(loc-.1)/.75));
+  const g=i<3?0:i>3?1:Math.min(1,Math.max(0,(loc-.1)/.75));
   gen.style.setProperty('--p',(g*100)+'%');gen.style.setProperty('--bo',g>0&&g<1?1:0);
   requestAnimationFrame(loop)};
 requestAnimationFrame(loop);
